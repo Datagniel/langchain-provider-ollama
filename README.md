@@ -1,4 +1,4 @@
-# Langchain-provider
+# Langchain-provider-ollama
 
 ## Project Info
 
@@ -18,23 +18,17 @@ To use this completions provider you will need to install Spyder 6 (at least 6.0
 
 To install the provider package from source, you can use `pip` with something like:
 
-    pip install git+https://github.com/spyder-ide/langchain-provider.git
+    pip install git+https://github.com/Datagniel/langchain-provider-ollama.git
 
-Or from PyPI something like:
-
-    pip install langchain-provider
-
-Also, you need to have a OpenAI API key, which you can get from [here](https://platform.openai.com/signup) and then set it as a environment variable (`OPENAI_API_KEY`).
+Also, you need to have a Ollama preinstalled, which you can get from [here](https://ollama.com/download).
 
 ## Preview
 
-![langchain provider demo](https://raw.githubusercontent.com/spyder-ide/langchain-provider/master/langchain-provider.gif)
+![original langchain provider demo](https://raw.githubusercontent.com/spyder-ide/langchain-provider/master/langchain-provider.gif)
 
 ## Configuration
 
-To configure the provider number of suggestions (1 - 10) or the model to use (`gpt-3.5-turbo`, or `gpt4`) you can click on the Langchain status bar and click the `Change provider parameters` menu entry:
-
-![langchain provider config](https://raw.githubusercontent.com/spyder-ide/langchain-provider/master/langchain-provider-config.gif)
+To configure the provider number of suggestions (1 - 10) or the model to use (`codellama` or `llama3.1`) you need to modify the CONF_DEFAULTS list in the LangchainProvider class in the provider.py script by hand, because I couldn't find out yet how the model selection works in the GUI. If someone wants to fix it, feel free to do so.
 
 ## Dependencies
 
