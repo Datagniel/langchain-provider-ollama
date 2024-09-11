@@ -10,7 +10,7 @@ import json
 import logging
 
 # Third party imports
-from langchain_community.chat_models import ChatOpenAI
+from langchain_community.chat_models.ollama import ChatOllama
 from langchain.chains import LLMChain
 from langchain.prompts.chat import (
     ChatPromptTemplate,
@@ -67,9 +67,8 @@ class LangchainClient(QObject):
             code_template,
         )
         try:
-            llm = ChatOpenAI(
-                temperature=0,
-                model_name=self.model_name,
+            llm = ChatOllama(
+                model=self.model_name,
             )
             chat_prompt = ChatPromptTemplate.from_messages(
                 [system_message_prompt, code_message_prompt]
@@ -82,7 +81,7 @@ class LangchainClient(QObject):
             self.sig_client_started.emit()
         except ValueError as e:
             logger.debug(e)
-            self.sig_client_error.emit("Missing OpenAI API key")
+            self.sig_client_error.emit("Missing Ollama API key or configuration")
         except Exception as e:
             logger.debug(e)
             self.sig_client_error.emit("Unexpected error")
