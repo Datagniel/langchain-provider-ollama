@@ -34,7 +34,7 @@ class LangchainProvider(SpyderCompletionProvider):
     CONF_DEFAULTS = [
         ("suggestions", 4),
         ("language", "Python"),
-        ("model_name", "gpt-3.5-turbo"),
+        ("model_name", "codellama"),  # Replace with your Ollama model name
     ]
     TEMPLATE_PARAM = """You are a helpful assistant in completing following {0} code based
                   on the previous sentence.
