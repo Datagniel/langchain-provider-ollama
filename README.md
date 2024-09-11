@@ -20,7 +20,7 @@ To install the provider package from source, you can use `pip` with something li
 
     pip install git+https://github.com/Datagniel/langchain-provider-ollama.git
 
-Also, you need to have a Ollama preinstalled, which you can get from [here](https://ollama.com/download).
+Also, you need to have Ollama preinstalled, which you can get from [here](https://ollama.com/download).
 
 ## Preview
 
